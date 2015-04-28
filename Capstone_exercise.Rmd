@@ -14,7 +14,7 @@ gapminder <- read.csv("gapminder.csv")
 
 scatter plots (one for each country) that has year on the x-axis and GDP on the y axis
 
-```{r, filter_countries, echo=FALSE}
+```{r, plot_data_3countries, echo=FALSE}
 data <- gapminder %>% filter(country== "China"|country=="United States"|country== "Albania") 
 ggplot(data,aes (x=year, y=gdpPercap)) +
   geom_point() +
@@ -22,3 +22,21 @@ ggplot(data,aes (x=year, y=gdpPercap)) +
 ```
 
 comments on the graphs
+------------------
+-------------
+---  
+
+```{r, continent_stat, echo=FALSE}
+gapminder %>%
+  group_by(continent, year=2007) %>%
+  summarize(meanlifeExp = mean(lifeExp), minlifeExp= min(lifeExp),maxlifeExp=max(lifeExp))
+```
+
+
+comments on the stat
+------------------
+-------------
+---  
+
+
+
