@@ -38,5 +38,18 @@ comments on the stat
 -------------
 ---  
 
+```{r, plot_data_histograms, echo=FALSE}
+ggplot(gapminder,aes (x=lifeExp)) +
+  geom_histogram(fill="lightblue", color="black")
+
+ggplot(gapminder,aes (x=lifeExp)) +
+  geom_histogram(binwidth=1.5, fill="lightblue", color="black")
+```
+
+comments on the stat
+------------------
+-------------
+---  
+
 
 
