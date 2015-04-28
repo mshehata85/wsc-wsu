@@ -1,0 +1,24 @@
+---
+title: "Capstone_exercise"
+output: html_document
+---
+
+```{r,load_libraries, echo=FALSE, results="hide", message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r, load_data,echo=FALSE}
+gapminder <- read.csv("gapminder.csv")
+```
+
+scatter plots (one for each country) that has year on the x-axis and GDP on the y axis
+
+```{r, filter_countries, echo=FALSE}
+data <- gapminder %>% filter(country== "China"|country=="United States"|country== "Albania") 
+ggplot(data,aes (x=year, y=gdpPercap)) +
+  geom_point() +
+  facet_grid(~country)
+```
+
+comments on the graphs
